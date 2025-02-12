@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+        
+        .input-field {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 12px;
+            padding: 0.75rem 1rem;
+            width: 100%;
+        }
+        
+        .input-field:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .payment-toggle {
+            appearance: none;
+        }
+        
+        .payment-toggle:checked + label {
+            background: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="min-h-screen p-6">
+    <div class="max-w-7xl mx-auto rounded-3xl bg-[#121212] p-8">
+        <h1 class="text-4xl font-bold text-center mb-12 tracking-wider">PAGO</h1>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Left Column - Customer Information -->
+            <div>
+                <h2 class="text-2xl font-bold mb-6">Información del cliente</h2>
+                
+                <div class="space-y-6">
+                    <div>
+                        <input type="text" placeholder="Nombre" class="input-field">
+                    </div>
+                    
+                    <div>
+                        <input type="tel" placeholder="Teléfono" class="input-field">
+                    </div>
+                    
+                    <div class="flex gap-4">
+                        <div class="flex items-center">
+                            <input type="radio" name="payment-type" id="contado" class="payment-toggle hidden">
+                            <label for="contado" class="px-6 py-2 rounded-full border border-white/10 cursor-pointer hover:bg-white/5">
+                                Contado
+                            </label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="radio" name="payment-type" id="abono" class="payment-toggle hidden">
+                            <label for="abono" class="px-6 py-2 rounded-full border border-white/10 cursor-pointer hover:bg-white/5">
+                                Abono
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center gap-4">
+                        <label class="text-xl">Monto:</label>
+                        <input type="text" class="input-field">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Cart & Payment Methods -->
+            <div>
+                <!-- Cart Items -->
+                <div class="space-y-4 mb-8">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <div class="relative">
+                                <div class="w-16 h-16 rounded-2xl border border-white/10 flex items-center justify-center">
+                                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20pantalla%202025-02-11%20a%20la(s)%209.35.42%E2%80%AFp.m.-PIpNMdEO9nY9KfffSZv4jxJGs6PMQs.png" alt="Lentes" class="w-12 h-12 object-contain">
+                                </div>
+                                <span class="absolute -top-2 -right-2 bg-white/10 w-6 h-6 rounded-full flex items-center justify-center text-sm">1</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold">LENTES OFTALMICOS</h3>
+                                <p class="text-sm">KYBALION 1224</p>
+                            </div>
+                        </div>
+                        <span class="text-xl">$1,300.00</span>
+                    </div>
+                    
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <div class="relative">
+                                <div class="w-16 h-16 rounded-2xl border border-white/10 flex items-center justify-center">
+                                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20pantalla%202025-02-11%20a%20la(s)%209.35.42%E2%80%AFp.m.-PIpNMdEO9nY9KfffSZv4jxJGs6PMQs.png" alt="Lentes" class="w-12 h-12 object-contain">
+                                </div>
+                                <span class="absolute -top-2 -right-2 bg-white/10 w-6 h-6 rounded-full flex items-center justify-center text-sm">1</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold">LENTES OFTALMICOS</h3>
+                                <p class="text-sm">KYBALION 1224</p>
+                            </div>
+                        </div>
+                        <span class="text-xl">$1,300.00</span>
+                    </div>
+                </div>
+
+                <!-- Payment Methods -->
+                <div class="space-y-4">
+                    <h3 class="text-lg mb-4">Selecciona tu método de pago</h3>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center justify-between px-4 py-3 rounded-xl border border-white/10">
+                            <span>Tarjeta de Débito</span>
+                            <span class="text-sm opacity-60">VISA</span>
+                        </div>
+                        <button class="px-4 py-3 rounded-xl border border-white/10 hover:bg-white/5">
+                            Ingresar tarjeta de Débito
+                        </button>
+                        
+                        <div class="flex items-center justify-between px-4 py-3 rounded-xl border border-white/10">
+                            <span>Tarjeta de Crédito</span>
+                            <span class="text-sm opacity-60">mastercard</span>
+                        </div>
+                        <button class="px-4 py-3 rounded-xl border border-white/10 hover:bg-white/5">
+                            Ingresar tarjeta de Crédito
+                        </button>
+                        
+                        <div class="flex items-center justify-between px-4 py-3 rounded-xl border border-white/10">
+                            <span>Efectivo</span>
+                            <span class="text-sm opacity-60">OXXO</span>
+                        </div>
+                        <button class="px-4 py-3 rounded-xl border border-white/10 hover:bg-white/5">
+                            Sucursal Oxxo más cercana
+                        </button>
+                    </div>
+
+                    <!-- Shipping -->
+                    <div class="flex items-center justify-between mt-8">
+                        <span>Envío</span>
+                        <button class="text-right text-sm opacity-60 hover:opacity-100">
+                            Introducir la dirección de envío
+                        </button>
+                    </div>
+
+                    <!-- Total -->
+                    <div class="flex items-center justify-between mt-4">
+                        <span class="text-xl">Total</span>
+                        <span class="text-xl">MXN $2,600</span>
+                    </div>
+
+                    <!-- Confirm Button -->
+                    <div class="flex justify-end mt-8">
+                        <button class="px-8 py-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors text-lg">
+                            Confirmar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

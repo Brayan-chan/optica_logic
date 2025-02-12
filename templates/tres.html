@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles de Compra</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+        
+        .quantity-input {
+            background: transparent;
+            border: none;
+            width: 40px;
+            text-align: center;
+            color: white;
+            font-size: 1rem;
+        }
+        
+        .quantity-input::-webkit-inner-spin-button,
+        .quantity-input::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        
+        .quantity-container {
+            background: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="min-h-screen p-6">
+    <div class="max-w-4xl mx-auto rounded-3xl bg-[#121212] p-8">
+        <h1 class="text-4xl font-bold text-center mb-12 tracking-wider">DETALLES DE COMPRA</h1>
+        
+        <!-- Product Item 1 -->
+        <div class="flex items-center justify-between mb-8 p-4">
+            <div class="flex items-center gap-8">
+                <div class="w-24 h-24 rounded-2xl border border-white/10 flex items-center justify-center p-2">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20pantalla%202025-02-11%20a%20la(s)%209.34.30%E2%80%AFp.m.-1lCOGnwIHZocoTNZzZWfRByXvvIbyl.png" alt="Lentes" class="w-full h-full object-contain">
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold mb-1">LENTES OFTALMICOS</h2>
+                    <p class="text-xl">KYBALION 1224</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-8">
+                <span class="text-2xl">$1,300.00</span>
+                <div class="flex items-center">
+                    <span class="text-sm text-gray-400 mr-2">Cantidad</span>
+                    <div class="quantity-container flex items-center rounded-full px-4 py-1">
+                        <button class="text-xl px-2 hover:opacity-75">-</button>
+                        <input type="number" value="1" min="1" class="quantity-input">
+                        <button class="text-xl px-2 hover:opacity-75">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Item 2 -->
+        <div class="flex items-center justify-between mb-8 p-4">
+            <div class="flex items-center gap-8">
+                <div class="w-24 h-24 rounded-2xl border border-white/10 flex items-center justify-center p-2">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20pantalla%202025-02-11%20a%20la(s)%209.34.30%E2%80%AFp.m.-1lCOGnwIHZocoTNZzZWfRByXvvIbyl.png" alt="Lentes" class="w-full h-full object-contain">
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold mb-1">LENTES OFTALMICOS</h2>
+                    <p class="text-xl">KYBALION 1224</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-8">
+                <span class="text-2xl">$1,300.00</span>
+                <div class="flex items-center">
+                    <span class="text-sm text-gray-400 mr-2">Cantidad</span>
+                    <div class="quantity-container flex items-center rounded-full px-4 py-1">
+                        <button class="text-xl px-2 hover:opacity-75">-</button>
+                        <input type="number" value="1" min="1" class="quantity-input">
+                        <button class="text-xl px-2 hover:opacity-75">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Order Button -->
+        <div class="flex justify-end mt-8">
+            <button class="px-8 py-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors text-lg">
+                Ordenar
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Handle quantity inputs
+        document.querySelectorAll('.quantity-container').forEach(container => {
+            const input = container.querySelector('input');
+            const minusBtn = container.querySelector('button:first-child');
+            const plusBtn = container.querySelector('button:last-child');
+
+            minusBtn.addEventListener('click', () => {
+                const currentValue = parseInt(input.value);
+                if (currentValue > 1) {
+                    input.value = currentValue - 1;
+                }
+            });
+
+            plusBtn.addEventListener('click', () => {
+                const currentValue = parseInt(input.value);
+                input.value = currentValue + 1;
+            });
+
+            input.addEventListener('change', () => {
+                if (input.value < 1) input.value = 1;
+            });
+        });
+    </script>
+</body>
+</html>

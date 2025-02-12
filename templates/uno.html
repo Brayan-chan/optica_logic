@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Óptica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @font-face {
+            font-family: 'CustomFont';
+            src: url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+        }
+        
+        body {
+            font-family: 'CustomFont', sans-serif;
+            background-color: #1a1a1a;
+            color: white;
+        }
+        
+        .product-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .filters-button {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+        }
+    </style>
+</head>
+<body class="min-h-screen p-6">
+    <div class="max-w-7xl mx-auto rounded-3xl bg-[#121212] p-8 relative overflow-hidden">
+        <!-- Header -->
+        <header class="flex justify-between items-start mb-12">
+            <div class="text-sm opacity-80">
+                <p>Sucursal LERMA</p>
+                <p>C. 19, Lerma Centro, 24500</p>
+            </div>
+            <h1 class="text-4xl font-bold absolute left-1/2 -translate-x-1/2">ÓPTICA</h1>
+            <div class="flex gap-4">
+                <button class="p-2 rounded-full bg-white/10">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                </button>
+                <button class="p-2 rounded-full bg-white/10">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Filters -->
+        <button class="filters-button px-6 py-2 rounded-full mb-8 flex items-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+            </svg>
+            Filtros
+        </button>
+
+        <!-- Main Content -->
+        <h2 class="text-2xl font-bold mb-8">Lentes solares</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Product Card (repeated 4 times) -->
+            <div class="product-card rounded-2xl p-4 relative">
+                <span class="absolute top-4 right-4 text-sm opacity-60">(37 pz)</span>
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20pantalla%202025-02-11%20a%20la(s)%209.27.53%E2%80%AFp.m.-AvKuaeNlo1lP6jeatEhPsDvyG5LvQg.png" alt="Lentes solares" class="w-full h-48 object-contain mb-4">
+                <div class="flex justify-between items-center">
+                    <span class="text-lg font-semibold">$800.00</span>
+                    <button class="px-4 py-1 rounded-full bg-white/10 hover:bg-white/20 transition-colors">
+                        Agregar
+                    </button>
+                </div>
+            </div>
+            <!-- Repeat product card 3 more times -->
+            <div class="product-card rounded-2xl p-4 relative">
+                <span class="absolute top-4 right-4 text-sm opacity-60">(37 pz)</span>
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20pantalla%202025-02-11%20a%20la(s)%209.27.53%E2%80%AFp.m.-AvKuaeNlo1lP6jeatEhPsDvyG5LvQg.png" alt="Lentes solares" class="w-full h-48 object-contain mb-4">
+                <div class="flex justify-between items-center">
+                    <span class="text-lg font-semibold">$800.00</span>
+                    <button class="px-4 py-1 rounded-full bg-white/10 hover:bg-white/20 transition-colors">
+                        Agregar
+                    </button>
+                </div>
+            </div>
+            <div class="product-card rounded-2xl p-4 relative">
+                <span class="absolute top-4 right-4 text-sm opacity-60">(37 pz)</span>
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20pantalla%202025-02-11%20a%20la(s)%209.27.53%E2%80%AFp.m.-AvKuaeNlo1lP6jeatEhPsDvyG5LvQg.png" alt="Lentes solares" class="w-full h-48 object-contain mb-4">
+                <div class="flex justify-between items-center">
+                    <span class="text-lg font-semibold">$800.00</span>
+                    <button class="px-4 py-1 rounded-full bg-white/10 hover:bg-white/20 transition-colors">
+                        Agregar
+                    </button>
+                </div>
+            </div>
+            <div class="product-card rounded-2xl p-4 relative">
+                <span class="absolute top-4 right-4 text-sm opacity-60">(37 pz)</span>
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20pantalla%202025-02-11%20a%20la(s)%209.27.53%E2%80%AFp.m.-AvKuaeNlo1lP6jeatEhPsDvyG5LvQg.png" alt="Lentes solares" class="w-full h-48 object-contain mb-4">
+                <div class="flex justify-between items-center">
+                    <span class="text-lg font-semibold">$800.00</span>
+                    <button class="px-4 py-1 rounded-full bg-white/10 hover:bg-white/20 transition-colors">
+                        Agregar
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-12 text-right text-sm opacity-60">
+            <p>Contáctanos</p>
+            <p>981-115-4756</p>
+            <p>opticalerma@gmail.com</p>
+        </footer>
+    </div>
+</body>
+</html>
